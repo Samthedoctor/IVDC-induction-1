@@ -1,0 +1,57 @@
+1. A* Algorithm  
+The A* algorithm combines the benefits of Dijkstra’s algorithm and heuristic search by prioritizing nodes estimated to be closer to the goal.
+
+Strengths:
+
+Finds optimal paths in static environments.
+Efficiently searches through space using heuristic estimates, often resulting in faster computation times than Dijkstra's algorithm.
+Weaknesses:
+
+Struggles with dynamic obstacles as it may require re-computation of paths.
+Performance degrades significantly if the heuristic function is poor or improperly defined.
+Applicability:
+Best for applications in static environments, such as grid-based navigation systems in robot path planning or game development where obstacles are relatively constant
+
+
+
+2.Rapidly-exploring Random Trees (RRT)
+RRT is designed to explore high-dimensional spaces rapidly by incrementally building a tree.
+
+Strengths:
+
+Can handle complex constraints, making it well-suited for non-holonomic systems.
+Effective in discovering feasible paths in unknown spaces.
+Weaknesses:
+
+Typically produces suboptimal paths, lacking the refinement process.
+May require extensive samples to achieve quality paths in certain configurations.
+Applicability:
+Useful for applications in robotics such as UAV path planning and mobile robots navigating through uncharted terrains
+
+3.Breadth-First Search(BFS)
+BFS is a graph traversal algorithm that explores nodes layer by layer from a starting node, using a queue to track which nodes to visit next.
+
+Strengths:
+
+Completeness: BFS is guaranteed to find a solution if one exists in the search space .
+Optimal for Unweighted Graphs: When all path costs are equal, BFS will reliably find the shortest path to the goal .
+Weaknesses:
+
+Inefficiency in Large Spaces: In extensive or complex environments, BFS can become inefficient as it explores many nodes before reaching the desired destination, consuming substantial time and memory resources .
+Difficulty with Dynamic Environments: BFS struggles in situations where the environment changes over time, necessitating the need for the algorithm to recalculate paths, which can dramatically reduce its effectiveness .
+Applicability:
+BFS is particularly useful in grid-based scenarios where obstacles are static, such as robotic path planning for mobile robots navigating through clearly defined areas or game environments . Its ability to ensure the shortest path makes it a valuable choice for applications such as automated warehouse navigation.
+
+4.Probabilistic Roadmap (PRM)
+PRM constructs a roadmap by sampling valid configurations and connecting them.
+
+Strengths:
+
+Particularly effective in high-dimensional spaces and complex environments.
+Can efficiently handle multiple queries after an initial preprocessing phase.
+Weaknesses:
+
+Lacks optimality; may not yield the most efficient paths.
+Can struggle with dynamic environments as samples may not represent immediate surroundings.
+Applicability:
+Best suited for scenarios where the environment is mostly static, such as warehouse robots moving through defined aisles.
