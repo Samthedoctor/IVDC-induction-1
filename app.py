@@ -13,3 +13,6 @@ lane_image = np.zeros_like(image)
 for line in lines:
     x1, y1, x2, y2 = line[0]
     cv2.line(lane_image, (x1, y1), (x2, y2), (255, 255, 255), 3)
+
+bitmap_output = np.where(lane_image == 255, 0, 255).astype(np.uint8)
+cv2.imwrite('lane_bitmap_output.bmp', bitmap_output)
